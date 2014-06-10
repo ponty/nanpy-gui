@@ -33,3 +33,4 @@ Run
 .. _python: http://www.python.org/
 .. _pip: http://pip.openplans.org/
 .. _TraitsUI: http://code.enthought.com/projects/traits_ui/
+.. _Nanpy: https://github.com/nanpy/nanpy
