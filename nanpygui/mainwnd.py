@@ -139,7 +139,7 @@ class BoardWrapper(HasTraits):
             for x in self.pins:
                 x.update()
             self.uptime = self.tree.api.millis() / 1000.0
-            self.vcc = self.tree.vcc.read()
+            self.vcc = self.tree.vcc.read() if self.tree.vcc else -1
         time.sleep(self.update_interval / 1000.0)
 
     traits_view = View(

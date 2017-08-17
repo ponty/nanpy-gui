@@ -35,9 +35,11 @@ class PinWrapper(HasTraits):
             self.usb = ''
 
         if self.pin.pwm.available:
-                ls = [int(x) for x in self.pin.pwm.frequencies_available]
+                ls = [int(x) for x in self.pin.pwm.frequencies_available if x is not None]
+                if not ls:
+                    ls=[-1]
                 self.add_trait('pwm_frequency', Enum(ls))
-                self.pwm_frequency = int(self.pin.pwm.frequency)
+                self.pwm_frequency = int(self.pin.pwm.frequency if self.pin.pwm.frequency else -1)
                 self.timer = self.pin.pwm.timer_register_name_b
 
         self.avr_pin = self.pin.avr_pin
