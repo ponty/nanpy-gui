@@ -64,7 +64,7 @@ class BoardWrapper(HasTraits):
                      )
     serial_device = Enum(_auto_detect_serial_unix())
     baudrate = Int(115200)
-    sleep_after_connect = Int(0)
+    sleep_after_connect = Int(2)
     timeout = Int(1)
     uptime = Float()
     tree = None
